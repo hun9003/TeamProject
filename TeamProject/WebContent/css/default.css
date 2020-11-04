@@ -21,22 +21,25 @@ div#top_member_menu { float: right; margin: 20px 20px 0 0 }
 ul.menu_col li { float:left; list-style-type: none; padding: 0 20px;}
 ul.main_banner_list {padding: 0; margin: 0; position: absolute;}
 ul.main_banner_list li {padding: 0; margin: 0;}
+.clear {clear: both;}
 .no_margin { margin : 0;}
+.no_padding { padding: 0;}
 .wrap_back {width:100%; height:800px; position:absolute; top:0px; z-index: -1; background-image: url("../img/beach-1280.jpg");filter: blur(radius); -webkit-filter: blur(10px);}
 .font_black { color : rgb(58, 58, 58); }
 .font_white { color : #fff; }
 .font_red { color : #c60000; }
 .font_green { color : #32b700; }
 .font_bold { font-weight: bold; }
+.fx_header {width:1400px; position: fixed; top: 0; margin: 0 auto; background-color: rgb(46,46,46, 0.65); color: #000;}
+.f_right {float:right;}
 a.btn_link { text-decoration: none;}
 a.btn_link:hover { text-decoration: underline; }
 a.btn_banner { text-decoration: none;}
 
 a.btn_main { font-weight: bold; }
-
 footer { height: 200px; background-color: #373737; color: #fff;}
 footer table { position: relative; bottom:50px; }
 footer td { padding: 0 50px;}
-footer td.footer_title {font-size: 18px;}
+footer td.footer_title {font-size: 36px;}
 footer td.footer_content {font-size: 14px;}
-
+footer td.footer_sms img { width: 30px; background-color: #fff; border-radius: 5px; margin: 0 10px;}

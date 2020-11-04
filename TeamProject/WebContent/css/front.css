@@ -5,20 +5,20 @@
 .bg_lightgreen { background-color: lightgreen;}
 .bg_pink { background-color: pink; }
 .bg_yellow { background-color: yellow;}
-div#main_banner { height: 500px; }
-div#main_menu { height: 400px; }
+div#main_banner { height: 500px; background-image: url("../img/main_background.jpg"); background-repeat: no-repeat; background-size: 1400px; background-position: 0px -200px;}
+div#main_menu { height: 400px;}
 div#main_editors { height: 400px; }
 div#main_project { height: 400px; }
 div#main_job { height: 400px; }
-div#main_guide { height: 300px; }
+div#main_guide { height: 500px; }
 div#main_site_info { height: 200px; }
 
-div.main_menu_circle { float:left; width:200px; height:200px; margin:60px 125px; }
-div.main_menu_circle img { width: 200px; height: 200px; border-radius: 50%;}
-div.main_menu_text {text-align: center; margin-top: 20px; font-size: 18px; text-align: center;}
+div.main_menu_circle { float:left; width:200px; height:200px; margin:60px 125px; border-radius: 50%; box-shadow: 5px 5px 5px #444; text-align: center; }
+div.main_menu_circle img { width: 180px; height: 180px; margin-top: 10px;}
+div.main_menu_text {text-align: center; margin-top: 40px; font-size: 18px; text-align: center;}
 
 div#main_editors_title {margin: 0 20px;}
-div.main_editors_form {float:left; width:400px; height:240px; margin:60px 33px; border-radius: 16px;}
+div.main_editors_form {float:left; width:400px; height:240px; margin:60px 33px; border-radius: 16px; box-shadow: 2px 2px 2px #444;} 
 
 div#main_project_title {margin: 0 20px;}
 div.main_project_form {float:left; width:400px; height:240px; margin:60px 33px; border-radius: 16px;}
@@ -26,3 +26,25 @@ div.main_project_form {float:left; width:400px; height:240px; margin:60px 33px; 
 div.main_info_status { font-size : 26px;}
 div.main_info { float:left; width:200px; height:200px; margin:60px 125px; text-align: center;}
 div.main_info_text { margin-top: 20px;}
+
+div.main_editors_table { width: 400px; height: 240px; }
+div.editors_profile {width: 80px; height: 80px; float:left; margin: 10px 0 0 10px;}
+div.editors_profile img{ width: 80px; height: 80px;}
+div.editors_title{ width:280px; height: 2.4em; float:left; font-weight: bold; font-size: 18px; margin: 20px 10px 0 10px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; word-wrap:break-word; line-height: 1.2em;}
+div.editors_name{text-align: right; font-weight: bold; margin-right: 10px;}
+div.editors_score_detail{ width: 200px; height:120px; float:left; margin-top: 10px; font-weight: bold;}
+div.editors_content{ width:200px; height: 120px; float:left; margin-top: 10px; font-weight: bold;}
+
+div.editors_score_detail_text{ margin:10px 20px 8px 20px; text-align: right;}
+div.editors_score_detail_text progress {width:100px; margin-left: 5px; }
+
+div.editors_content_text{ margin:15px 20px 15px 5px;}
+.starR{
+  background: url('http://miuu227.godohosting.com/images/icon/ico_review.png') no-repeat right 0;
+  background-size: auto 100%;
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  text-indent: -9999px;
+}
+.starR.on{background-position:0 0;}
