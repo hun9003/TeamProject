@@ -1,0 +1,42 @@
+@charset "UTF-8";
+@font-face {
+    font-family: PWperspective;
+    src: url('./font/PWperspective.ttf');
+}
+@font-face {
+    font-family: NanumGothic_0;
+    src: url('./font/NanumGothic_0.ttf');
+    }
+@font-face {
+    font-family: NanumGothicBold_0;
+    src: url('./font/NanumGothicBold_0.ttf');
+    }
+html,body {margin: 0; padding:0; min-height: 1600px;	font-family: "NanumGothic_0", sans-serif; 	background-image: url("../img/main_background_blur.jpg"); background-attachment: fixed;}
+div#wrap {width: 1400px; margin: 0 auto; z-index: 1; background: #fff;}
+div#top {margin: 0 auto; display: inline; position:relative; z-index: 2;}
+div#top_title { float: left; margin: 20px 0 0 20px }
+div#top_menu { float: left; margin: 20px 0 20px 50px; }
+div#top_menu li { padding : 0px 40px; }
+div#top_member_menu { float: right; margin: 20px 20px 0 0 }
+ul.menu_col li { float:left; list-style-type: none; padding: 0 20px;}
+ul.main_banner_list {padding: 0; margin: 0; position: absolute;}
+ul.main_banner_list li {padding: 0; margin: 0;}
+.no_margin { margin : 0;}
+.wrap_back {width:100%; height:800px; position:absolute; top:0px; z-index: -1; background-image: url("../img/beach-1280.jpg");filter: blur(radius); -webkit-filter: blur(10px);}
+.font_black { color : rgb(58, 58, 58); }
+.font_white { color : #fff; }
+.font_red { color : #c60000; }
+.font_green { color : #32b700; }
+.font_bold { font-weight: bold; }
+a.btn_link { text-decoration: none;}
+a.btn_link:hover { text-decoration: underline; }
+a.btn_banner { text-decoration: none;}
+
+a.btn_main { font-weight: bold; }
+
+footer { height: 200px; background-color: #373737; color: #fff;}
+footer table { position: relative; bottom:50px; }
+footer td { padding: 0 50px;}
+footer td.footer_title {font-size: 18px;}
+footer td.footer_content {font-size: 14px;}
+
