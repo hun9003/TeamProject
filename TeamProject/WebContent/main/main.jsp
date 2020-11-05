@@ -15,38 +15,67 @@ $(window).scroll(function() {
 	if (scroll >= 50) {
 		//console.log('a');
 		$("header").addClass("fx_header");
-
 	} else {
 		//console.log('a');
 		$("header").removeClass("fx_header");
 		
 	}
 });
+$(document).ready(function(){
+	$(".job_bullet label:nth-child(1)").css('background','#666');
+	var width = 1400;
+	var jobCount = $("input[name=job_pos]").length;
+	$(".job_left").click(function(){
+		$(".job_left").css("pointer-events","none");
+		$(".job_right").css("pointer-events","none");
+		
+		setTimeout(function(){
+			$(".job_left").css("pointer-events","auto");
+			$(".job_right").css("pointer-events","auto");
+		},1000);
+		
+		var job_margin = $(".main_job_form").css('marginLeft').replace('px','');
+		if(job_margin != 0){
+			var job_pos = Number(job_margin / -1400) + Number(0);
+			var job_pos_next = Number(job_margin / -1400) + Number(1);
+			$(".main_job_form").css('marginLeft',Number(job_margin)+Number(width)+"px");
+			$(".job_bullet label:nth-child("+job_pos_next+")").css('background','#fff');
+			$(".job_bullet label:nth-child("+job_pos+")").css('background','#666');
+		} else {
+			$(".main_job_form").css('marginLeft',-width*(jobCount-1)+"px");
+			$(".job_bullet label:nth-child(1)").css('background','#fff');
+			$(".job_bullet label:nth-child("+jobCount+")").css('background','#666');
+		}
+	});
+	$(".job_right").click(function(){
+		var job_margin = $(".main_job_form").css('marginLeft').replace('px','');
+		
+		$(".job_left").css("pointer-events","none");
+		$(".job_right").css("pointer-events","none");
+		setTimeout(function(){
+			$(".job_left").css("pointer-events","auto");
+			$(".job_right").css("pointer-events","auto");
+		},1000);
+		
+		if(job_margin != width*(1-jobCount)){
+			var job_pos = Number(job_margin / -1400) + Number(1);
+			var job_pos_next = Number(job_margin / -1400) + Number(2);
+			$(".main_job_form").css('marginLeft',Number(job_margin)-Number(width)+"px");
+			$(".job_bullet label:nth-child("+job_pos_next+")").css('background','#666');
+			$(".job_bullet label:nth-child("+job_pos+")").css('background','#fff');
+		} else {
+			$(".main_job_form").css('marginLeft',0+"px");
+			$(".job_bullet label:nth-child(1)").css('background','#666');
+			$(".job_bullet label:nth-child("+jobCount+")").css('background','#fff');
+		}
+	});
+});
 </script>
+
 </head>
 <body>
 <div id="wrap">
-<header>
-<div id="top">
-	<div id="top_title">
-		<h1 id="main_title" class="font_white no_margin" onclick="location.href='../index.html'">Eddict</h1>
-	</div>
-	<div id="top_menu">
-		<ul class="menu_col menu_main">
-			<li><a href="#" class="btn_link btn_main font_white">사이트소개</a></li>
-			<li><a href="#" class="btn_link btn_main font_white">프로젝트찾기</a></li>
-			<li><a href="#" class="btn_link btn_main font_white">편집자찾기</a></li>
-			<li><a href="#" class="btn_link btn_main font_white">채용공고</a></li>
-		</ul>
-	</div>
-	<div id="top_member_menu">
-		<ul class="menu_col menu_member">
-			<li><a href="#" class="btn_link btn_main font_white">로그인</a></li>
-			<li><a href="#" class="btn_link btn_main font_white">회원가입</a></li>
-		</ul>
-	</div>
-</div>
-</header>
+<jsp:include page="../inc/top.jsp"/>
 <main>
 <div id="main_banner">
 
@@ -71,7 +100,7 @@ $(window).scroll(function() {
 </div>
 
 <div id="main_editors">
-<div id="main_editors_title"><h2 class="no_margin"><font class="font_red">HOT</font> EDITORS</h2></div>
+<div class="main_title"><h2 class="no_margin"><font class="font_red">HOT</font> EDITORS</h2></div>
 	<div class="main_editors_form">
 		<div class="main_editors_table">
 		<div class="editors_profile"><img alt="profile" src="../img/customer-service-2-fill.svg"></div>
@@ -154,15 +183,173 @@ $(window).scroll(function() {
 </div>
 
 <div id="main_project">
-<div id="main_project_title"><h2 class="no_margin"><font class="font_green">NEW</font> Project</h2></div>
-<div class="main_project_form bg_pink"></div>
-<div class="main_project_form bg_pink"></div>
-<div class="main_project_form bg_pink"></div>
+<div class="main_title"><h2 class="no_margin"><font class="font_green">NEW</font> Project</h2></div>
+<div class="main_project_form">
+	<div class="main_project_table">
+	<div class="project_profile"><img alt="profile" src="../img/creator.svg"></div>
+	<div class="project_title">"실력있는 편집자 구합니다."</div>
+	<div class="project_name">test1234</div>
+	<div class="clear"></div>
+	<div class="project_detail">
+		<div class="project_detail_text">분야 <span class="f_right">광고</span></div>
+		<div class="project_detail_text">편집전 런타임 <span class="f_right">2시간</span></div>
+		<div class="project_detail_text">편집후 런타임 <span class="f_right">5분</span></div>
+	</div>
+	<div class="project_content">
+		<div class="project_content_text">평균단가<span class="f_right">5만원~10만원</span></div>
+		<div class="project_content_text">영상클립<span class="f_right">4개</span></div>
+		<div class="project_content_text">0명의 지원자가 있습니다.</div>
+	</div>
+</div>
+</div>
+<div class="main_project_form">
+	<div class="main_project_table">
+	<div class="project_profile"><img alt="profile" src="../img/creator.svg"></div>
+	<div class="project_title">"실력있는 편집자 구합니다."</div>
+	<div class="project_name">test1234</div>
+	<div class="clear"></div>
+	<div class="project_detail">
+		<div class="project_detail_text">분야 <span class="f_right">광고</span></div>
+		<div class="project_detail_text">편집전 런타임 <span class="f_right">2시간</span></div>
+		<div class="project_detail_text">편집후 런타임 <span class="f_right">5분</span></div>
+	</div>
+	<div class="project_content">
+		<div class="project_content_text">평균단가<span class="f_right">5만원~10만원</span></div>
+		<div class="project_content_text">영상클립<span class="f_right">4개</span></div>
+		<div class="project_content_text">0명의 지원자가 있습니다.</div>
+	</div>
+</div>
+</div>
+<div class="main_project_form">
+	<div class="main_project_table">
+	<div class="project_profile"><img alt="profile" src="../img/creator.svg"></div>
+	<div class="project_title">"실력있는 편집자 구합니다."</div>
+	<div class="project_name">test1234</div>
+	<div class="clear"></div>
+	<div class="project_detail">
+		<div class="project_detail_text">분야 <span class="f_right">광고</span></div>
+		<div class="project_detail_text">편집전 런타임 <span class="f_right">2시간</span></div>
+		<div class="project_detail_text">편집후 런타임 <span class="f_right">5분</span></div>
+	</div>
+	<div class="project_content">
+		<div class="project_content_text">평균단가<span class="f_right">5만원~10만원</span></div>
+		<div class="project_content_text">영상클립<span class="f_right">4개</span></div>
+		<div class="project_content_text">0명의 지원자가 있습니다.</div>
+	</div>
+</div>
+</div>
 </div>
 
-<div id="main_job" class="bg_yellow"></div>
+<div id="main_job">
+<div class="main_title"><h2 class="no_margin">채용공고</h2></div>
+<input type="radio" name="job_pos" id="job_pos1" checked>
+<input type="radio" name="job_pos" id="job_pos2">
+<input type="radio" name="job_pos" id="job_pos3">
+<ul class="main_job_form no_margin no_padding">
+<li>
+<div class="main_job_table">
+<div class="main_job_top">
+<div class="main_job_logo"><img src="https://blog.kakaocdn.net/dn/bgbn4B/btqwQkVHqgl/h1te0fy07UbzgMgt5AUkFK/img.jpg"></div>
+<div class="main_job_title">
+<div class="main_job_name">현대자동차(주)</div>
+<div class="main_job_subject">비싼차 출시 광고 제작자 모집</div>
+</div>
+</div>
+<div class="clear"></div>
+<div class="main_job_mid">
+<div class="main_job_detail1">
+<div class="main_job_detail_text">업무내용 :<span class="f_right">영상 편집자 및 광고 제작 실력자 모집 학력무관 신입환영</span></div>
+<div class="main_job_detail_text">근무지 :<span class="f_right">부산광역시 진구 도라에몽 퉁퉁이 204-1번지 202호</span></div>
+<div class="main_job_detail_text">고용형태 :<span class="f_right">프리미어, 에프터, 이펙트</span></div>
+</div>
+<div class="main_job_detail2">
+<div class="main_job_detail_text">근무요일 :<span class="f_right">월 ~ 금</span></div>
+<div class="main_job_detail_text">출퇴근시간 :<span class="f_right">09:00 ~ 18:00</span></div>
+<div class="main_job_detail_text">연봉 :<span class="f_right">2억 2천만원</span></div>
+</div>
+</div>
+<div class="clear"></div>
+<div class="main_job_bottom">
+<div class="main_job_tetail_text">
+<span>신입 &amp; 경력직</span>
+<span class="f_right"><a class="main_btn" href="#">즉시 지원하기</a></span>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="main_job_table">
+<div class="main_job_top">
+<div class="main_job_logo"><img src="https://lh3.googleusercontent.com/proxy/EwXngw4uqSVcbJ7KxkrYXcWOKlnBg1eCGG5RJV7FnheeKRKEduVt2bbnjhIh_3WEC0Zoei4uQolMTKaY2Ow57BZLe9Z1-8BZRJi83m4bJCQ6VLZyXrqow1jd6QY9VEpQVwdwPKmO9nAY0pPpfRaFVaxPQ7q5MXnQclkV1u9qhcZxBaKq_0YqKZPrIezdvBy5aavDvMQF9Bp56Sx6XuTM_u9hRZWANX9myEBZ-BqURhIfDyQqcsXujNsTcr0QZYlP0RAcl6npyHR1G9lmPgAXWZK4klL_1pzVfUWnaLKKKdsydEnsyoQrgp8qRK7HUnV6"></div>
+<div class="main_job_title">
+<div class="main_job_name">삼성플랜(주)</div>
+<div class="main_job_subject">갤럭시S60 출시 광고 제작자 모집</div>
+</div>
+</div>
+<div class="clear"></div>
+<div class="main_job_mid">
+<div class="main_job_detail1">
+<div class="main_job_detail_text">업무내용 :<span class="f_right">영상 편집자 및 광고 제작 실력자 모집 학력무관 신입환영</span></div>
+<div class="main_job_detail_text">근무지 :<span class="f_right">부산광역시 진구 도라에몽 퉁퉁이 204-1번지 202호</span></div>
+<div class="main_job_detail_text">고용형태 :<span class="f_right">프리미어, 에프터, 이펙트</span></div>
+</div>
+<div class="main_job_detail2">
+<div class="main_job_detail_text">근무요일 :<span class="f_right">월 ~ 금</span></div>
+<div class="main_job_detail_text">출퇴근시간 :<span class="f_right">09:00 ~ 18:00</span></div>
+<div class="main_job_detail_text">연봉 :<span class="f_right">2억 2천만원</span></div>
+</div>
+</div>
+<div class="clear"></div>
+<div class="main_job_bottom">
+<div class="main_job_tetail_text">
+<span>신입 &amp; 경력직</span>
+<span class="f_right"><a class="main_btn" href="#">즉시 지원하기</a></span>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="main_job_table">
+<div class="main_job_top">
+<div class="main_job_logo"><img src="https://img.hankyung.com/photo/201908/01.20349359.1.jpg"></div>
+<div class="main_job_title">
+<div class="main_job_name">(주)네이버</div>
+<div class="main_job_subject">포털사이트 광고 제작자 모집</div>
+</div>
+</div>
+<div class="clear"></div>
+<div class="main_job_mid">
+<div class="main_job_detail1">
+<div class="main_job_detail_text">업무내용 :<span class="f_right">영상 편집자 및 광고 제작 실력자 모집 학력무관 신입환영</span></div>
+<div class="main_job_detail_text">근무지 :<span class="f_right">부산광역시 진구 도라에몽 퉁퉁이 204-1번지 202호</span></div>
+<div class="main_job_detail_text">고용형태 :<span class="f_right">프리미어, 에프터, 이펙트</span></div>
+</div>
+<div class="main_job_detail2">
+<div class="main_job_detail_text">근무요일 :<span class="f_right">월 ~ 금</span></div>
+<div class="main_job_detail_text">출퇴근시간 :<span class="f_right">09:00 ~ 18:00</span></div>
+<div class="main_job_detail_text">연봉 :<span class="f_right">2억 2천만원</span></div>
+</div>
+</div>
+<div class="clear"></div>
+<div class="main_job_bottom">
+<div class="main_job_tetail_text">
+<span>신입 &amp; 경력직</span>
+<span class="f_right"><a class="main_btn" href="#">즉시 지원하기</a></span>
+</div>
+</div>
+</div>
+</li>
+</ul>
+<p class="job_bullet">
+	<label for="job_pos1">1</label>
+	<label for="job_pos2">2</label>
+	<label for="job_pos3">3</label>
+</p>
+<a class="job_left"><img class="job_arrow_btn" alt="왼쪽" src="../img/arrow-left-s-line.png"></a>
+<a class="job_right"><img class="job_arrow_btn" alt="오른쪽" src="../img/arrow-right-s-line.png"></a>
+</div>
 
-<div id="main_guide" class="bg_lightblue"></div>
+<!-- <div id="main_guide" class="bg_lightblue"></div> -->
 
 <div id="main_site_info">
 <div class="main_info">
@@ -182,18 +369,7 @@ $(window).scroll(function() {
 
 </div>
 </main>
-<footer>
-<table>
-<tr><td class="footer_title font_bold">Eddict</td><td class="footer_content">
-주식회사 위시켓 (대표이사: 박우범) / 서울특별시 강남구 테헤란로 211 한국고등교육재단빌딩 3층 (주)위시켓 <br>
-사업자등록번호: 209-81-57303 / 통신판매업신고: 제2018-서울강남-02337 호 / 직업정보제공사업 신고번호: J1200020180019<br>
-© 2013 Wishket Corp.</td>
-<td class="footer_sms">
-<img src="../img/facebook-box-fill.svg"> <img src="../img/instagram-fill.svg">
-</td>
-</tr>
-</table>
-</footer>
+<jsp:include page="../inc/bottom.jsp"/>
 </div>
 
 </body>

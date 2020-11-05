@@ -9,7 +9,7 @@ div#main_banner { height: 500px; background-image: url("../img/main_background.j
 div#main_menu { height: 400px;}
 div#main_editors { height: 400px; }
 div#main_project { height: 400px; }
-div#main_job { height: 400px; }
+div#main_job { height: 400px; overflow:hidden;position:relative;}
 div#main_guide { height: 500px; }
 div#main_site_info { height: 200px; }
 
@@ -17,11 +17,10 @@ div.main_menu_circle { float:left; width:200px; height:200px; margin:60px 125px;
 div.main_menu_circle img { width: 180px; height: 180px; margin-top: 10px;}
 div.main_menu_text {text-align: center; margin-top: 40px; font-size: 18px; text-align: center;}
 
-div#main_editors_title {margin: 0 20px;}
+div.main_title {margin: 0 20px;}
 div.main_editors_form {float:left; width:400px; height:240px; margin:60px 33px; border-radius: 16px; box-shadow: 2px 2px 2px #444;} 
 
-div#main_project_title {margin: 0 20px;}
-div.main_project_form {float:left; width:400px; height:240px; margin:60px 33px; border-radius: 16px;}
+div.main_project_form {float:left; width:400px; height:240px; margin:60px 33px; border-radius: 16px; box-shadow: 2px 2px 2px #444;}
 
 div.main_info_status { font-size : 26px;}
 div.main_info { float:left; width:200px; height:200px; margin:60px 125px; text-align: center;}
@@ -48,3 +47,39 @@ div.editors_content_text{ margin:15px 20px 15px 5px;}
   text-indent: -9999px;
 }
 .starR.on{background-position:0 0;}
+
+div.project_profile {width: 80px; height: 80px; float:left; margin: 10px 0 0 10px;}
+div.project_profile img{ width: 80px; height: 80px;}
+div.project_title{ width:280px; height: 2.4em; float:left; font-weight: bold; font-size: 18px; margin: 20px 10px 0 10px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; word-wrap:break-word; line-height: 1.2em;}
+div.project_name{text-align: right; font-weight: bold; margin-right: 10px;}
+div.project_detail{ width: 190px; height:120px; float:left; margin-top: 10px; font-weight: bold; border-right: solid 1px #bbbbbb;}
+div.project_content{ width:200px; height: 120px; float:left; margin-top: 10px; margin-left : 5px; font-weight: bold;}
+
+div.project_detail_text{ margin:15px 20px 15px 20px;}
+div.project_content_text{ margin:15px 20px 15px 5px;}
+
+div#main_job input{display:none;}
+div#main_job .job_bullet{position:absolute;bottom:20px;left:0;right:0;text-align:center;z-index:10;}
+div#main_job .job_bullet label{width:10px;height:10px;border-radius:10px;border:2px solid #666;display:inline-block;background:#fff;font-size:0;transition:0.5s;}
+/* 슬라이드 조작 */
+    #job_pos1:checked ~ ul.main_job_form{margin-left:0;}
+    #job_pos2:checked ~ ul.main_job_form{margin-left:-100%;}
+    #job_pos3:checked ~ ul.main_job_form{margin-left:-200%;}
+/* bullet 조작 */
+.job_arrow_btn{width:48px; cursor: pointer;}
+.job_left{position: absolute; top:200px; left:40px;}   
+.job_right{position: absolute; width:24px; top:200px; right:40px;}
+ul.main_job_form{height:340px; list-style-type: none; margin:0 auto; width:calc(100% * 4);display:flex;transition:1s;}
+ul.main_job_form li{width:calc(100% / 4);height:300px;}
+div.main_job_table{width:1200px; height:340px; box-shadow: 2px 2px 2px #444; margin:20px auto; border-radius: 16px; font-weight: bold;}
+div.main_job_top{width:1200px; height: 50px;}
+div.main_job_logo{padding: 20px; float:left;}
+div.main_job_logo img{max-width:300px; max-height: 50px;}
+div.main_job_title{float:left; margin-top: 15px;}
+div.main_job_name{font-size: 14px; color: #28bdfd;}
+div.main_job_subject{font-size: 20px; margin-top: 10px;}
+div.main_job_mid{height:160px; font-size:18px; width: 1070px; margin: 20px auto 0 auto;}
+div.main_job_detail1{float:left; width:700px; margin: 0px 15px; margin-right: solid 1px #bbbbbb;}
+div.main_job_detail2{float:left; width:300px; margin: 0px 15px;}
+div.main_job_bottom{height: 80px; width: 1100px; margin: 30px auto 0 auto;}
+div.main_job_detail_text{margin:20px 0;}
