@@ -62,9 +62,9 @@ div#main_job input{display:none;}
 div#main_job .job_bullet{position:absolute;bottom:20px;left:0;right:0;text-align:center;z-index:10;}
 div#main_job .job_bullet label{width:10px;height:10px;border-radius:10px;border:2px solid #666;display:inline-block;background:#fff;font-size:0;transition:0.5s;}
 /* 슬라이드 조작 */
-    #job_pos1:checked ~ ul.main_job_form{margin-left:0;}
-    #job_pos2:checked ~ ul.main_job_form{margin-left:-100%;}
-    #job_pos3:checked ~ ul.main_job_form{margin-left:-200%;}
+/*     #job_pos1:checked ~ ul.main_job_form{margin-left:0;} */
+/*     #job_pos2:checked ~ ul.main_job_form{margin-left:-100%;} */
+/*     #job_pos3:checked ~ ul.main_job_form{margin-left:-200%;} */
 /* bullet 조작 */
 .job_arrow_btn{width:48px; cursor: pointer;}
 .job_left{position: absolute; top:200px; left:40px;}   
