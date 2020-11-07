@@ -4,6 +4,7 @@
 <header>
 <% int login = 1; %>
 <div id="top">
+<jsp:include page="side.jsp"/>
 	<div id="top_title">
 		<h1 id="main_title" class="font_white no_margin" onclick="location.href='home'">Eddict</h1>
 	</div>
@@ -24,7 +25,8 @@
 			<li><div id="menuBtn" class="menu_user"><img src="img/menu_white.png" alt="메뉴"></div></li>
 		</ul>
 		<div id="myNav" class="menu_user_content">
-			<ul class="lstyle_n overlay_content no_margin">
+			<ul class="lstyle_n overlay_content no_margin no_padding pullRight">
+			 <li class="bg_red">메뉴</li>
 			 <li><a href="#">My INFO</a></li>
 			 <li><a href="#">1:1 문의</a></li>
 			 <li><a href="#">자주 묻는 질문</a></li>

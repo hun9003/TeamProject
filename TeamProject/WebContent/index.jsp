@@ -14,17 +14,21 @@ $(document).ready(function(){
 		var navHeight = $("#myNav").css("height").replace("px","");
 		if(navHeight > 0){
 			$("#myNav").css("height","0px");
+			$("#myNav").css("border","0px solid #c60000");
 		} else {
 			var ulHeight = $(".overlay_content").css("height").replace("px","");
 			$("#myNav").css("height",ulHeight);
+			$("#myNav").css("border","2px solid #c60000");
 		}
 	});
 	$("#noticeBtn").click(function(){
 		var navHeight = $("#myNotice").css("height").replace("px","");
 		if(navHeight > 0){
 			$("#myNotice").css("height","0px");
+			$("#myNotice").css("border","0px solid #c60000");
 		} else {
 			var ulHeight = $("#notice_list").css("height").replace("px","");
+			$("#myNotice").css("border","2px solid #c60000");
 			$("#myNotice").css("height",ulHeight);
 		}
 	});
@@ -33,12 +37,14 @@ $(document).ready(function(){
 		var noticeHeight = $("#myNotice").css("height").replace("px","");
 		if(navHeight > 0){
 			if(!$(e.target).hasClass("menu_user_content")) {
-					$("#myNav").css("height","0px"); 
+					$("#myNav").css("height","0px");
+					$("#myNav").css("border","0px solid #c60000");
 				} 
 		}
 		if(noticeHeight > 0){
 			if(!$(e.target).hasClass("menu_user_notice")) {
-				$("#myNotice").css("height","0px"); 
+				$("#myNotice").css("height","0px");
+				$("#myNotice").css("border","0px solid #c60000");
 			} 
 		}
 	});
@@ -122,30 +128,31 @@ $(document).ready(function(){
 <div id="main_menu">
 
 <div class="main_menu_circle">
-<a href="#"><img src="img/creator.svg"></a>
+<a href="#"><img src="img/creator.svg" class="circle_img"></a>
 <div class="main_menu_text font_bold">크리에이터</div>
 </div>
 
 <div class="main_menu_circle">
-<a href="#"><img src="img/editor.svg"></a>
+<a href="#"><img src="img/editor.svg" class="circle_img"></a>
 <div class="main_menu_text font_bold">편집자</div>
 </div>
 
 <div class="main_menu_circle">
-<a href="#"><img src="img/job.svg"></a>
+<a href="#"><img src="img/job.svg" class="circle_img"></a>
 <div class="main_menu_text font_bold">채용공고</div>
 </div>
 
 </div>
 
 <div id="main_editors">
-<div class="main_title"><h2 class="no_margin"><font class="font_red">HOT</font> EDITORS</h2></div>
+<div class="main_title"><h2 class="no_margin h2red"><font class="font_white">HOT</font> Editor<span class="f_right"><a href="#">+더보기</a></span></h2></div>
 	<div class="main_editors_form">
 		<div class="main_editors_table">
+		<div class="pullRight_red">		
 		<div class="editors_profile"><img alt="profile" src="img/customer-service-2-fill.svg"></div>
 		<div class="editors_title">"최선을 다해 편집하겠습니다."</div>
 		<div class="editors_name">test1234</div>
-		<div class="clear"></div>
+		<div class="clear form_red_hr"></div>
 		<div class="editors_score_detail">
 			<div class="editors_score_detail_text">전문성 <progress value="7" max="10"></progress></div>
 			<div class="editors_score_detail_text">만족도 <progress value="8" max="10"></progress></div>
@@ -164,14 +171,16 @@ $(document).ready(function(){
 			<div class="editors_content_text">포트폴리오<span class="f_right">0개</span></div>
 			<div class="editors_content_text">평균단가<span class="f_right">5만원~10만원</span></div>
 		</div>
+		</div>
 	</div>
 </div>
 	<div class="main_editors_form">
 		<div class="main_editors_table">
+		<div class="pullRight_red">
 		<div class="editors_profile"><img alt="profile" src="img/customer-service-2-fill.svg"></div>
 		<div class="editors_title">"최선을 다해 편집하겠습니다."</div>
 		<div class="editors_name">test1234</div>
-		<div class="clear"></div>
+		<div class="clear form_red_hr"></div>
 		<div class="editors_score_detail">
 			<div class="editors_score_detail_text">전문성 <progress value="7" max="10"></progress></div>
 			<div class="editors_score_detail_text">만족도 <progress value="8" max="10"></progress></div>
@@ -190,14 +199,16 @@ $(document).ready(function(){
 			<div class="editors_content_text">포트폴리오<span class="f_right">0개</span></div>
 			<div class="editors_content_text">평균단가<span class="f_right">5만원~10만원</span></div>
 		</div>
+		</div>
 	</div>
 </div>
 	<div class="main_editors_form">
 		<div class="main_editors_table">
+		<div class="pullRight_red">
 		<div class="editors_profile"><img alt="profile" src="img/customer-service-2-fill.svg"></div>
 		<div class="editors_title">"최선을 다해 편집하겠습니다."</div>
 		<div class="editors_name">test1234</div>
-		<div class="clear"></div>
+		<div class="clear form_red_hr"></div>
 		<div class="editors_score_detail">
 			<div class="editors_score_detail_text">전문성 <progress value="7" max="10"></progress></div>
 			<div class="editors_score_detail_text">만족도 <progress value="8" max="10"></progress></div>
@@ -216,19 +227,21 @@ $(document).ready(function(){
 			<div class="editors_content_text">포트폴리오<span class="f_right">0개</span></div>
 			<div class="editors_content_text">평균단가<span class="f_right">5만원~10만원</span></div>
 		</div>
+		</div>
 	</div>
 </div>
 
 </div>
 
 <div id="main_project">
-<div class="main_title"><h2 class="no_margin"><font class="font_green">NEW</font> Project</h2></div>
+<div class="main_title"><h2 class="no_margin h2green"><font class="font_white">NEW</font> Project<span class="f_right"><a href="#">+더보기</a></span></h2></div>
 <div class="main_project_form">
 	<div class="main_project_table">
+	<div class="pullRight_green">
 	<div class="project_profile"><img alt="profile" src="img/creator.svg"></div>
 	<div class="project_title">"실력있는 편집자 구합니다."</div>
 	<div class="project_name">test1234</div>
-	<div class="clear"></div>
+	<div class="clear form_green_hr"></div>
 	<div class="project_detail">
 		<div class="project_detail_text">분야 <span class="f_right">광고</span></div>
 		<div class="project_detail_text">편집전 런타임 <span class="f_right">2시간</span></div>
@@ -239,14 +252,16 @@ $(document).ready(function(){
 		<div class="project_content_text">영상클립<span class="f_right">4개</span></div>
 		<div class="project_content_text">0명의 지원자가 있습니다.</div>
 	</div>
+	</div>
 </div>
 </div>
 <div class="main_project_form">
 	<div class="main_project_table">
+	<div class="pullRight_green">
 	<div class="project_profile"><img alt="profile" src="img/creator.svg"></div>
 	<div class="project_title">"실력있는 편집자 구합니다."</div>
 	<div class="project_name">test1234</div>
-	<div class="clear"></div>
+	<div class="clear form_green_hr"></div>
 	<div class="project_detail">
 		<div class="project_detail_text">분야 <span class="f_right">광고</span></div>
 		<div class="project_detail_text">편집전 런타임 <span class="f_right">2시간</span></div>
@@ -257,14 +272,16 @@ $(document).ready(function(){
 		<div class="project_content_text">영상클립<span class="f_right">4개</span></div>
 		<div class="project_content_text">0명의 지원자가 있습니다.</div>
 	</div>
+	</div>
 </div>
 </div>
 <div class="main_project_form">
 	<div class="main_project_table">
+	<div class="pullRight_green">
 	<div class="project_profile"><img alt="profile" src="img/creator.svg"></div>
 	<div class="project_title">"실력있는 편집자 구합니다."</div>
 	<div class="project_name">test1234</div>
-	<div class="clear"></div>
+	<div class="clear form_green_hr"></div>
 	<div class="project_detail">
 		<div class="project_detail_text">분야 <span class="f_right">광고</span></div>
 		<div class="project_detail_text">편집전 런타임 <span class="f_right">2시간</span></div>
@@ -274,17 +291,17 @@ $(document).ready(function(){
 		<div class="project_content_text">평균단가<span class="f_right">5만원~10만원</span></div>
 		<div class="project_content_text">영상클립<span class="f_right">4개</span></div>
 		<div class="project_content_text">0명의 지원자가 있습니다.</div>
+	</div>
 	</div>
 </div>
 </div>
 </div>
 
 <div id="main_job">
-<div class="main_title"><h2 class="no_margin">채용공고</h2></div>
 <input type="radio" name="job_pos" id="job_pos1" checked>
 <input type="radio" name="job_pos" id="job_pos2">
 <input type="radio" name="job_pos" id="job_pos3">
-<ul class="main_job_form no_margin no_padding">
+<ul class="main_job_form no_margin no_padding" style="margin-left:0px;">
 <li>
 <div class="main_job_table">
 <div class="main_job_top">
@@ -294,7 +311,7 @@ $(document).ready(function(){
 <div class="main_job_subject">비싼차 출시 광고 제작자 모집</div>
 </div>
 </div>
-<div class="clear"></div>
+<div class="clear form_brown_hr"></div>
 <div class="main_job_mid">
 <div class="main_job_detail1">
 <div class="main_job_detail_text">업무내용 :<span class="f_right">영상 편집자 및 광고 제작 실력자 모집 학력무관 신입환영</span></div>
@@ -311,7 +328,6 @@ $(document).ready(function(){
 <div class="main_job_bottom">
 <div class="main_job_tetail_text">
 <span>신입 &amp; 경력직</span>
-<span class="f_right"><a class="main_btn" href="#">즉시 지원하기</a></span>
 </div>
 </div>
 </div>
@@ -342,7 +358,6 @@ $(document).ready(function(){
 <div class="main_job_bottom">
 <div class="main_job_tetail_text">
 <span>신입 &amp; 경력직</span>
-<span class="f_right"><a class="main_btn" href="#">즉시 지원하기</a></span>
 </div>
 </div>
 </div>
@@ -373,7 +388,6 @@ $(document).ready(function(){
 <div class="main_job_bottom">
 <div class="main_job_tetail_text">
 <span>신입 &amp; 경력직</span>
-<span class="f_right"><a class="main_btn" href="#">즉시 지원하기</a></span>
 </div>
 </div>
 </div>
@@ -408,6 +422,7 @@ $(document).ready(function(){
 
 </div>
 </main>
+
 <jsp:include page="inc/bottom.jsp"/>
 </div>
 
