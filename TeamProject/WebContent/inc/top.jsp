@@ -29,7 +29,7 @@
 			 <li class="bg_red">메뉴</li>
 			 <li><a href="#">My INFO</a></li>
 			 <li><a href="#">1:1 문의</a></li>
-			 <li><a href="#">자주 묻는 질문</a></li>
+			 <li><a href="intro#QnA">자주 묻는 질문</a></li>
 			 <li><a href="#">로그아웃</a></li>
 			</ul>
   		</div>

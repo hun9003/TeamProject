@@ -1,0 +1,34 @@
+@charset "UTF-8";
+div.intro_main{width:1400px; height:800px; background-image: url("../img/intro/intro.png"); background-size: 1400px; margin-bottom: 100px;}
+div.intro_content{position: relative; z-index:1;overflow:hidden;}
+div.intro_content h1 { margin: 0 0 50px 20px; color: #d94925; text-shadow: 1px 1px 3px #FC5230;}
+
+.intro_arrow_btn{width:48px; cursor: pointer;}
+ul.intro_content_list{height:680px; list-style-type: none; margin-left: 0px;; width:calc(100% * 5);display:flex;transition:1s;}
+ul.intro_content_list li{width:calc(100% / 5);height:650px; }
+.intro_left{position: absolute; top:450px; left:30px;}   
+.intro_right{position: absolute; width:24px; top:450px; right:40px;}
+div.intro_content_item{width:1200px; height:680px; background-size: 1200px; margin:0 auto;}
+div.intro_content_1{background-image: url("../img/intro/intro1.png");}
+div.intro_content_2{background-image: url("../img/intro/intro2.png");}
+div.intro_content_3{background-image: url("../img/intro/intro3.png");}
+div.intro_content_4{background-image: url("../img/intro/intro4.png");}
+div.intro_content_5{background-image: url("../img/intro/intro5.png");}
+
+div.intro_nav {width:1200px;height: 40px;margin: 0 auto 10px auto; font-weight: bold; color:20px; border: 3px solid #FC5230; background-color: #fff;}
+div.intro_nav_f {cursor:pointer; float:left;height: 43px; width:240px; text-align: center; vertical-align: middle; line-height: 40px;}
+.active {background-color: #FC5230; color: #fff;margin:auto 0;}
+
+div.intro_QnA { height: 400px; margin-top: 100px; margin-bottom: 200px;}
+div.intro_QnA h1{ margin: 0 0 50px 20px; color: #d94925; text-shadow: 1px 1px 3px #FC5230;}
+
+div.intro_QnA_table {border-radius: 8px; position:relative; width:1200px; height:400px;; background-color: #FC5230; margin: 0 auto; z-index:1;}
+div.intro_QnA_list { width:300px; height:360px; color:#fff; font-weight: bold; font-size: 18px; float: left;}
+div.intro_QnA_list ul {height:360px; width:300px; margin:30px 0 0 40px; list-style-type: none; overflow: scroll;}
+div.intro_QnA_list li {cursor:pointer; padding: 15px 10px; border-bottom: 3px solid #fff;}
+div.intro_QnA_list li:hover {text-decoration: underline;}
+div.intro_QnA_content {border-radius: 8px; position:absolute; top:21px; right:23px; width:800px; height:360px; background-color: #fff; float: left; margin: auto;}
+div.intro_QnA_question h1 { margin: 10px;}
+div.intro_QnA_answer h2{margin: 40px 0 0 15px; color: #d94925; text-shadow: 1px 1px 3px #FC5230;}
+div.intro_QnA_answer { margin-top:20px;}
+div.intro_QnA_answer_content { font-weight: bold; font-size: 20px; padding: 20px;}

@@ -70,7 +70,7 @@ div.notice_content ul li{padding:20px 0 30px 0;}
 .ad2 { position: absolute; left:-1120px; top:150px;}
 
 }
-@media (min-width : 2000px) {
+@media (min-width : 2100px) {
 .ad1,.ad2 {display: block;}
 .ad1 img, .ad2 img{ width:300px; }
 .ad1 { position: absolute; left:560px; top:150px;}
