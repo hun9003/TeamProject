@@ -15,8 +15,10 @@ html,body {margin: 0; padding:0; min-height: 1600px;	font-family: "NanumGothic_0
 /*  	background-image: url("../img/back6.png"); background-position: 300px 0px; */
  	
  	}
+main { min-height: 500px;}
+header {height:81px; background-color:rgb(230,0,0, 0.65);}
 div#wrap {width: 1400px; margin: 0 auto; background: #fff2e6;}
-div#top {margin: 0 auto; display: inline; position:relative; z-index: 300;}
+div#top {margin: 0 auto; display: inline; position:relative; z-index: 300; }
 div#top_title { float: left; margin: 20px 0 0 20px; cursor: pointer; }
 div#top_menu { float: left; margin: 20px 0 20px 50px; }
 div#top_menu li { padding : 0px 40px; }
@@ -64,15 +66,15 @@ div.notice_content ul li{padding:20px 0 30px 0;}
 @media (min-width : 1801px) {
 .ad1,.ad2 {display: block;}
 .ad1 img, .ad2 img{ width:200px; }
-.ad1 { position: absolute; left:610px; top:150px;}
-.ad2 { position: absolute; left:-1050px; top:150px;}
+.ad1 { position: absolute; left:560px; top:150px;}
+.ad2 { position: absolute; left:-1120px; top:150px;}
 
 }
 @media (min-width : 2000px) {
 .ad1,.ad2 {display: block;}
 .ad1 img, .ad2 img{ width:300px; }
-.ad1 { position: absolute; left:610px; top:150px;}
-.ad2 { position: absolute; left:-1150px; top:150px;}
+.ad1 { position: absolute; left:560px; top:150px;}
+.ad2 { position: absolute; left:-1220px; top:150px;}
 
 }
 
@@ -83,8 +85,8 @@ div.notice_content ul li{padding:20px 0 30px 0;}
 
 
 
-footer { height: 200px; background-color: #373737; color: #fff;}
-footer table { position: relative; bottom:50px; }
+footer {position: relative; height: 200px; background-color: #373737; color: #fff; z-index: 250;}
+footer table { position: absolute; bottom:70px; }
 footer td { padding: 0 50px;}
 footer td.footer_title {font-size: 36px;}
 footer td.footer_content {font-size: 14px;}
