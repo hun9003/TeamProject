@@ -4,119 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Eddict</title>
+<title>한줌에디터</title>
 <link href="css/default.css" rel="stylesheet" type="text/css">
 <link href="css/front.css" rel="stylesheet" type="text/css">
 <script src="js/jquery-3.5.1.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-	$("#menuBtn").click(function(){
-		var navHeight = $("#myNav").css("height").replace("px","");
-		if(navHeight > 0){
-			$("#myNav").css("height","0px");
-			$("#myNav").css("border","0px solid #c60000");
-		} else {
-			var ulHeight = $(".overlay_content").css("height").replace("px","");
-			$("#myNav").css("height",ulHeight);
-			$("#myNav").css("border","2px solid #c60000");
-		}
-	});
-	$("#noticeBtn").click(function(){
-		var navHeight = $("#myNotice").css("height").replace("px","");
-		if(navHeight > 0){
-			$("#myNotice").css("height","0px");
-			$("#myNotice").css("border","0px solid #c60000");
-		} else {
-			var ulHeight = $("#notice_list").css("height").replace("px","");
-			$("#myNotice").css("border","2px solid #c60000");
-			$("#myNotice").css("height",ulHeight);
-		}
-	});
-	$('html').click(function(e) {
-		var navHeight = $("#myNav").css("height").replace("px","");
-		var noticeHeight = $("#myNotice").css("height").replace("px","");
-		if(navHeight > 0){
-			if(!$(e.target).hasClass("menu_user_content")) {
-					$("#myNav").css("height","0px");
-					$("#myNav").css("border","0px solid #c60000");
-				} 
-		}
-		if(noticeHeight > 0){
-			if(!$(e.target).hasClass("menu_user_notice")) {
-				$("#myNotice").css("height","0px");
-				$("#myNotice").css("border","0px solid #c60000");
-			} 
-		}
-	});
-	
-	$(window).scroll(function() {
-		var scroll = $(window).scrollTop();
-		//console.log(scroll);
-		if (scroll >= 50) {
-			//console.log('a');
-			$("header").addClass("fx_header");
-		} else {
-			//console.log('a');
-			$("header").removeClass("fx_header");
-			
-		}
-	});
-});
-
-</script>
-<script type="text/javascript">
-
-$(document).ready(function(){
-	$(".job_bullet label:nth-child(1)").css('background','#666');
-	var width = 1400;
-	var jobCount = $("input[name=job_pos]").length;
-	$(".job_left").click(function(){
-		$(".job_left").css("pointer-events","none");
-		$(".job_right").css("pointer-events","none");
-		
-		setTimeout(function(){
-			$(".job_left").css("pointer-events","auto");
-			$(".job_right").css("pointer-events","auto");
-		},1000);
-		
-		var job_margin = $(".main_job_form").css('marginLeft').replace('px','');
-		if(job_margin != 0){
-			var job_pos = Number(job_margin / -1400) + Number(0);
-			var job_pos_next = Number(job_margin / -1400) + Number(1);
-			$(".main_job_form").css('marginLeft',Number(job_margin)+Number(width)+"px");
-			$(".job_bullet label:nth-child("+job_pos_next+")").css('background','#fff');
-			$(".job_bullet label:nth-child("+job_pos+")").css('background','#666');
-		} else {
-			$(".main_job_form").css('marginLeft',-width*(jobCount-1)+"px");
-			$(".job_bullet label:nth-child(1)").css('background','#fff');
-			$(".job_bullet label:nth-child("+jobCount+")").css('background','#666');
-		}
-	});
-	$(".job_right").click(function(){
-		var job_margin = $(".main_job_form").css('marginLeft').replace('px','');
-		
-		$(".job_left").css("pointer-events","none");
-		$(".job_right").css("pointer-events","none");
-		setTimeout(function(){
-			$(".job_left").css("pointer-events","auto");
-			$(".job_right").css("pointer-events","auto");
-		},1000);
-		
-		if(job_margin != width*(1-jobCount)){
-			var job_pos = Number(job_margin / -1400) + Number(1);
-			var job_pos_next = Number(job_margin / -1400) + Number(2);
-			$(".main_job_form").css('marginLeft',Number(job_margin)-Number(width)+"px");
-			$(".job_bullet label:nth-child("+job_pos_next+")").css('background','#666');
-			$(".job_bullet label:nth-child("+job_pos+")").css('background','#fff');
-		} else {
-			$(".main_job_form").css('marginLeft',0+"px");
-			$(".job_bullet label:nth-child(1)").css('background','#666');
-			$(".job_bullet label:nth-child("+jobCount+")").css('background','#fff');
-		}
-	});
-});
-</script>
-
+<script src="js/rollingJob.js"></script>
+<script src="js/topMenu.js"></script>
 </head>
 <body>
 <div id="wrap">
@@ -335,13 +228,13 @@ $(document).ready(function(){
 <li>
 <div class="main_job_table">
 <div class="main_job_top">
-<div class="main_job_logo"><img src="https://lh3.googleusercontent.com/proxy/EwXngw4uqSVcbJ7KxkrYXcWOKlnBg1eCGG5RJV7FnheeKRKEduVt2bbnjhIh_3WEC0Zoei4uQolMTKaY2Ow57BZLe9Z1-8BZRJi83m4bJCQ6VLZyXrqow1jd6QY9VEpQVwdwPKmO9nAY0pPpfRaFVaxPQ7q5MXnQclkV1u9qhcZxBaKq_0YqKZPrIezdvBy5aavDvMQF9Bp56Sx6XuTM_u9hRZWANX9myEBZ-BqURhIfDyQqcsXujNsTcr0QZYlP0RAcl6npyHR1G9lmPgAXWZK4klL_1pzVfUWnaLKKKdsydEnsyoQrgp8qRK7HUnV6"></div>
+<div class="main_job_logo"><img src="https://lh3.googleusercontent.com/proxy/wfAqGCy1LYtpqRgUWEGfPwaOBuloisc4MIfLmCFpVhA9iTozxZdeLHXRuc6Gpx23VB6X91C5qqhpNQT2Zj0NXDgVw7Ffgw96tBkDDukUsSOYVDzi5QukayDRY_lddeuj-lBxkM2PZNJRCarfKpDBt-g1RcU1Z5MlHgbZ72EKhTlABOlKFLXnR8kYZTlKQDD8qVpUE3AEF7efCz3nZswdkit-uag5pZE_7UWYBQb_pbp7Veq30fCQRzvQlQ9DXmwJggjU_b_T6ob7m5Qdkt-E3faAiV3NPM4zHeuJOE3lDV5_U6VoFOplmkVLPF8S-qZo"></div>
 <div class="main_job_title">
 <div class="main_job_name">삼성플랜(주)</div>
 <div class="main_job_subject">갤럭시S60 출시 광고 제작자 모집</div>
 </div>
 </div>
-<div class="clear"></div>
+<div class="clear form_brown_hr"></div>
 <div class="main_job_mid">
 <div class="main_job_detail1">
 <div class="main_job_detail_text">업무내용 :<span class="f_right">영상 편집자 및 광고 제작 실력자 모집 학력무관 신입환영</span></div>
@@ -371,7 +264,7 @@ $(document).ready(function(){
 <div class="main_job_subject">포털사이트 광고 제작자 모집</div>
 </div>
 </div>
-<div class="clear"></div>
+<div class="clear form_brown_hr"></div>
 <div class="main_job_mid">
 <div class="main_job_detail1">
 <div class="main_job_detail_text">업무내용 :<span class="f_right">영상 편집자 및 광고 제작 실력자 모집 학력무관 신입환영</span></div>

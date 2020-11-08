@@ -6,11 +6,11 @@
 <div id="top">
 <jsp:include page="side.jsp"/>
 	<div id="top_title">
-		<h1 id="main_title" class="font_white no_margin" onclick="location.href='home'">Eddict</h1>
+		<h1 id="main_title" class="font_white no_margin" onclick="location.href='home'">한줌에디터</h1>
 	</div>
 	<div id="top_menu">
 		<ul class="menu_col menu_main">
-			<li><a href="#" class="btn_link btn_main font_white">사이트소개</a></li>
+			<li><a href="intro" class="btn_link btn_main font_white">사이트소개</a></li>
 			<li><a href="#" class="btn_link btn_main font_white">프로젝트찾기</a></li>
 			<li><a href="#" class="btn_link btn_main font_white">편집자찾기</a></li>
 			<li><a href="#" class="btn_link btn_main font_white">채용공고</a></li>
