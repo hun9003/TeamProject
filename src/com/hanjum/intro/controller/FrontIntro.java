@@ -1,4 +1,4 @@
-package controller;
+package com.hanjum.intro.controller;
 
 import java.io.IOException;
 
