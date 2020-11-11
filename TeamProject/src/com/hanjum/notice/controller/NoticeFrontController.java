@@ -29,14 +29,15 @@ public class NoticeFrontController extends HttpServlet {
 		
 		
 		// 서블릿 주소 판별
-		// - view 페이지로 이동하려면 이동할 view 페이지를 ActionForward객체의 setPath()로 지정해서 이동
-		// - DB작업할거라면, action의 execute(request, response)를 호출해서 작업해줌
-		if(command.equals("/******.nt")) {
+		// - FRONT : view 페이지로 이동하려면 이동할 view 페이지를 ActionForward객체의 setPath()로 지정해서 이동
+		if(command.equals("/newAlarm.nt")) { // 신청했을때
 			
 		}else if(command.equals("/*****.nt")) {
 			
 		}
 		
+			
+		// - BACK : DB작업할거라면, action의 execute(request, response)를 호출해서 작업해줌
 		
 		// forward 존재여부판별해서 : dispatcher or redirect
 		if(forward != null) {
